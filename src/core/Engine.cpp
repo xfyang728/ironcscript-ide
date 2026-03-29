@@ -4,17 +4,17 @@
 #include <sstream>
 
 Engine::Engine() {
-    // 初始化 CScriptEngine
-    // 这里需要集成 CScriptEngine 库
+    // 初始化 IronCScript
+    // 这里需要集成 IronCScript 库
 }
 
 Engine::~Engine() {
-    // 清理 CScriptEngine 资源
+    // 清理 IronCScript 资源
 }
 
 std::string Engine::executeScript(const std::string& code) {
     // 模拟脚本执行
-    // 实际实现需要调用 CScriptEngine
+    // 实际实现需要调用 IronCScript
     std::stringstream ss;
     ss << "Executing script...\n";
     ss << "Code:\n" << code << "\n";

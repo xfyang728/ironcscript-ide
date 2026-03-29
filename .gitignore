@@ -1,0 +1,54 @@
+# Build output
+build/
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.obj
+*.o
+*.pdb
+*.ilk
+*.exp
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+*.vcxproj.filters
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!cmake/**
+!CMakeLists.txt
+
+# Ninja
+build.ninja
+rules.ninja
+.deps/
+
+# Test outputs
+Testing/
+CTestTestfile.cmake
+
+# External dependencies (large binaries)
+extern/*.a
+extern/*.jar
+extern/*.lib
+extern/*.dll
+extern/*.exe
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

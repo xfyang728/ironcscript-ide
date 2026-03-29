@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(CScriptEngineIDE)
+project(IronCScriptIDE)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -43,8 +43,9 @@ add_subdirectory(extern/glfw)
 # 集成 Scintilla
 add_subdirectory(extern/scintilla)
 
-# 集成 CScriptEngine
-# add_subdirectory(extern/CScriptEngine)
+# 集成 IronCScript (从 IronCScript-core)
+set(IronCScript_CORE_DIR "${CMAKE_SOURCE_DIR}/../IronCScript-core")
+add_subdirectory(${IronCScript_CORE_DIR} IronCScript)
 
 # 包含头文件目录
 include_directories(
@@ -56,25 +57,25 @@ include_directories(
     extern/scintilla/src
     extern/scintilla/win32
     extern/lexilla/include
-    extern/CScriptEngine/src
+    ${IronCScript_CORE_DIR}/src
 )
 
 # 创建可执行文件
-add_executable(CScriptEngineIDE ${SOURCES} ${HEADERS})
+add_executable(IronCScriptIDE ${SOURCES} ${HEADERS})
 
 # 链接库
-target_link_libraries(CScriptEngineIDE
+target_link_libraries(IronCScriptIDE
     imgui
     glfw
     scintilla
-    # CScriptEngineLib
+    IronCScriptCoreLib
 )
 
 # 平台特定设置
 if(WIN32)
-    target_link_libraries(CScriptEngineIDE opengl32 user32 gdi32 comctl32 ole32 oleaut32 uuid imm32)
+    target_link_libraries(IronCScriptIDE opengl32 user32 gdi32 comctl32 ole32 oleaut32 uuid imm32)
 elseif(UNIX AND NOT APPLE)
-    target_link_libraries(CScriptEngineIDE GL)
+    target_link_libraries(IronCScriptIDE GL)
 elseif(APPLE)
-    target_link_libraries(CScriptEngineIDE "-framework OpenGL")
+    target_link_libraries(IronCScriptIDE "-framework OpenGL")
 endif()

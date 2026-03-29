@@ -3,8 +3,7 @@
 #include <sstream>
 
 Terminal::Terminal() {
-    // 初始化输出行
-    outputLines.push_back("CScriptEngine Terminal");
+    outputLines.push_back("IronCScript Terminal");
     outputLines.push_back("Type 'help' for available commands");
 }
 
@@ -60,7 +59,7 @@ void Terminal::processInput() {
             outputLines.push_back("- clear: Clear terminal");
         } else if (inputBuffer == "clear") {
             outputLines.clear();
-            outputLines.push_back("CScriptEngine Terminal");
+            outputLines.push_back("IronCScript Terminal");
             outputLines.push_back("Type 'help' for available commands");
         } else {
             outputLines.push_back("Command not found: " + inputBuffer);

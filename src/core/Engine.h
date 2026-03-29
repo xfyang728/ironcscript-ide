@@ -11,5 +11,5 @@ public:
     bool compileForK210(const std::string& code, const std::string& outputPath);
 
 private:
-    // CScriptEngine 相关的成员变量和函数
+    // IronCScript 相关的成员变量和 함수
 };
