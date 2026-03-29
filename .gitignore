@@ -46,6 +46,11 @@ extern/*.lib
 extern/*.dll
 extern/*.exe
 
+# Large external source directories
+extern/capstone_src/
+extern/glfw/
+extern/imgui/
+
 # OS files
 .DS_Store
 Thumbs.db
