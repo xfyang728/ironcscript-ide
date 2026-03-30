@@ -11,8 +11,10 @@ void MainWindow::render() {
     renderMenuBar();
 
     // 主内容区域
-    ImGui::SetNextWindowSize(ImGui::GetIO().DisplaySize);
-    ImGui::SetNextWindowPos(ImVec2(0, 20));
+    ImVec2 displaySize = ImGui::GetIO().DisplaySize;
+    float menuBarHeight = 20; // 菜单栏高度
+    ImGui::SetNextWindowSize(ImVec2(displaySize.x, displaySize.y - menuBarHeight));
+    ImGui::SetNextWindowPos(ImVec2(0, menuBarHeight));
     ImGui::Begin("##MainContent", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
 
     // 分割窗口

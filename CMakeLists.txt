@@ -40,8 +40,7 @@ add_subdirectory(extern/imgui)
 # 集成 GLFW
 add_subdirectory(extern/glfw)
 
-# 集成 Scintilla
-add_subdirectory(extern/scintilla)
+# 集成 Scintilla（已移除，使用 ImGui 内置编辑器）
 
 # 集成 IronCScript (从 IronCScript-core)
 set(IronCScript_CORE_DIR "${CMAKE_SOURCE_DIR}/../IronCScript-core")
@@ -53,10 +52,6 @@ include_directories(
     extern/imgui
     extern/imgui/backends
     extern/glfw/include
-    extern/scintilla/include
-    extern/scintilla/src
-    extern/scintilla/win32
-    extern/lexilla/include
     ${IronCScript_CORE_DIR}/src
 )
 
@@ -67,7 +62,6 @@ add_executable(IronCScriptIDE ${SOURCES} ${HEADERS})
 target_link_libraries(IronCScriptIDE
     imgui
     glfw
-    scintilla
     IronCScriptCoreLib
 )
 
